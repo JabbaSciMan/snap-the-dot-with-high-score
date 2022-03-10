@@ -3,6 +3,7 @@ input.onButtonPressed(Button.A, function () {
         game.addScore(1)
         score1 += 1
         time += -20
+        music.playTone(262, music.beat(BeatFraction.Sixteenth))
     } else {
         sprite.delete()
         music.startMelody(music.builtInMelody(Melodies.Dadadadum), MelodyOptions.Once)
