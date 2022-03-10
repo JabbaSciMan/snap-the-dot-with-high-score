@@ -27,13 +27,16 @@ let High_Score = 0
 let score1 = 0
 let sprite: game.LedSprite = null
 basic.showIcon(IconNames.Happy)
-sprite = game.createSprite(2, 2)
+sprite = game.createSprite(1, 1)
 let time = 500
 score1 = 0
 let move_by = 1
 High_Score = 0
 basic.forever(function () {
-    sprite.move(move_by)
     sprite.ifOnEdgeBounce()
     basic.pause(time)
+    sprite.move(move_by)
+    if (sprite.isTouchingEdge()) {
+        sprite.turn(Direction.Right, randint(-1, 1) * 45)
+    }
 })
